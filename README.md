@@ -1,3 +1,57 @@
+# AirBnB clone - Web dynamic
+## General Learning Objectives
+* How cool it is to request your own API
+* How to modify an HTML element style
+* How to get and update an HTML element content
+* How to modify the DOM
+* How to make a GET request with JQuery Ajax
+* How to make a POST request with JQuery Ajax
+* How to listen/bind to DOM events
+* How to listen/bind to user events
+
+## More Info
+### Import JQuery
+```
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+```
+
+## Before starting the project…
+You will work on a codebase using [Flasgger](https://intranet.alxswe.com/rltoken/VmGDpw_DCN16OJt_UoqsDQ), you will need to install it locally first before starting the RestAPI:
+```
+$ sudo apt-get install -y python3-lxml
+$ sudo pip3 install flask_cors # if it was not installed yet
+$ sudo pip3 install flasgger
+```
+If the RestAPI is not starting, please read the error message. Based on the(ses) error message(s), you will have to troubleshoot potential dependencies issues.
+
+Here some solutions:
+
+#### **jsonschema** exception
+```
+$ sudo pip3 uninstall -y jsonschema 
+$ sudo pip3 install jsonschema==3.0.1
+```
+#### **No module named 'pathlib2'**
+```
+$ sudo pip3 install pathlib2
+```
+
+### Expose ports from your Vagrant
+In your Vagrantfile, add this line for each port forwarded
+```
+# I expose the port 5001 of my vm to the port 5001 on my computer
+config.vm.network :forwarded_port, guest: 5001, host: 5001 
+```
+
+if you need to expose other ports, same line but you will need to replace the “guest port” (inside your vagrant) and your “host port” (outside your vagrant, used from your browser for example)
+
+It’s important in your project, to use the AirBnB API with the port 5001
+
+![Airbnb web dynamic](https://s3.amazonaws.com/intranet-projects-files/concepts/74/hbnb_step5.png)
+
+
 # AirBnB Clone - The Console
 The console is the first segment of the AirBnB project at Holberton School that will collectively cover fundamental concepts of higher level programming. The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
 
@@ -158,6 +212,8 @@ Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twit
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)  
 Jhoan Zamora - [Github](https://github.com/jzamora5) / [Twitter](https://twitter.com/JhoanZamora10)  
 David Ovalle - [Github](https://github.com/Nukemenonai) / [Twitter](https://twitter.com/disartDave)
+Alice Kiptui - [Github](https://github.com/JEPTUI) / [Twitter](https://twitter.com/AliceJeptui)
+Paul Maina - [Github](https://github.com/mainangaruiya) / [Twitter](https://twitter.com/
 
 Second part of Airbnb: Joann Vuong
 ## License
