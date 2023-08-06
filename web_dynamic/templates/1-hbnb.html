@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="../static/styles/6-filters.css?{{ cache_id }}">
     <link type="text/css" rel="stylesheet" href="../static/styles/8-places.css?{{ cache_id }}">
     <link rel="stylesheet" href="static/styles/font-awesome.css?{{ cache_id }}">
+    <SCRIPT src="https://code.jquery.com/jquery-3.2.1.min.js"></SCRIPT>
+    <script src="static/scripts/1-hbnb.js"></script>
     <link rel="icon" href="../static/images/icon.png" />
     <title>HBnB</title>
   </head>
@@ -40,8 +42,8 @@
 	  <h4>&nbsp;</h4>
 	  <div class="popover">
 	    <ul>
-	      {% for amenity in amenities %}
-	      <li>{{ amenity.name }}</li>
+	      {% for amenity in amenities|sort(attribute='name') %}
+	      <LI><INPUT type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}"/>{{ amenity.name }}</LI>
 	      {% endfor %}
 	    </ul>
 	  </div>
