@@ -9,7 +9,7 @@
     <link type="text/css" rel="stylesheet" href="../static/styles/8-places.css?{{ cache_id }}">
     <link rel="stylesheet" href="static/styles/font-awesome.css?{{ cache_id }}">
     <SCRIPT src="https://code.jquery.com/jquery-3.2.1.min.js"></SCRIPT>
-    <script src="static/scripts/4-hbnb.js"></script>
+    <script src="static/scripts/100-hbnb.js"></script>
     <link rel="icon" href="../static/images/icon.png" />
     <title>HBnB</title>
   </head>
@@ -25,15 +25,13 @@
 	  <h4>&nbsp;</h4>
 	  <div class="popover">
 	    <ul>
-	      {% for state in states %}
-	      <li>
-		<h2>{{ state[0].name }}:</h2>
+	      {% for state in states|dictsort %}
+	      <H2><LI class="s"><INPUT type="checkbox" data-id="{{ state[1].id }}" data-name="{{ state[0] }}"/>{{ state[0] }}</LI></H2>
 		<ul>
-		  {% for city in state[1] %}
-		  <li>{{ city.name }}</li>
+		  {% for city in state[1].cities|sort(attribute='name') %}
+		  <LI class="c"><INPUT type="checkbox" data-id="{{ city.id }}" data-name="{{ city.name }}"/>{{ city.name }}</LI>
 		  {% endfor %}
 		</ul>
-	      </li>
 	      {% endfor %}
 	    </ul>
 	  </div>
